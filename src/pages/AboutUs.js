@@ -2,7 +2,7 @@ import React from 'react'
 
 function AboutUs() {
     return (
-        <h1>Hi this is a test</h1>
+        <h1>Hi this is About Us Page</h1>
     )
 }
 

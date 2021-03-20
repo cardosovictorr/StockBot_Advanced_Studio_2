@@ -1,18 +1,22 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
-import NavBar from './components/NavBar.js'
+import NavBarCustom from './components/NavBarCustom.js'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { Button } from 'react-bootstrap'
+//import { Button, Navbar } from 'react-bootstrap'
 
 function App() {
   return (
-    <div className="App">
+    <>
+      <Router>
+        <Switch>
+          <NavBarCustom />
+          <Route path='/' exact />
+        </Switch>
+      </Router>
 
-      <NavBar></NavBar>
-      {/* <Button>Test Button</Button> */}
-
-    </div>
+    </>
   );
 }
 

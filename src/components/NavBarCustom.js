@@ -1,14 +1,27 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import '../styles/NavBarCustom.css';
+import { ButtonCustom } from './ButtonCustom.js'
 
 //import 'bootstrap/dist/css/bootstrap.min.css'
 //import { Button, Navbar, Nav, NavDropdown, Form, FormControl } from 'react-bootstrap'
 
 function NavBarCustom() {
     const [click, setClick] = useState(false);
+    const [button, setButton] = useState(true);
 
     const handleClick = () => setClick(!click);
     const closeMobileMenu = () => setClick(false);
+
+    const showButton = () => {
+        if (window.innerWidth <= 960) {
+            setButton(false);
+        } else {
+            setButton(true);
+        }
+    };
+
+    window.addEventListener('risize', showButton);
 
     return (
         <>
@@ -59,6 +72,7 @@ function NavBarCustom() {
                             </Link>
                         </li>
                     </ul>
+                    {button && <ButtonCustom buttonStyle='btn--outline'>SIGN UP</ButtonCustom>}
                 </div>
             </nav>
         </>

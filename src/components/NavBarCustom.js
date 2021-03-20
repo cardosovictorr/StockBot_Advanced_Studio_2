@@ -31,8 +31,10 @@ function NavBarCustom() {
         <>
             <nav className="navbar">
                 <div className="navbar-container">
-                    <Link to='/' className='navbar-logo'>
-                        StockBot <i className='fab fa-typo3' />
+                    <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
+                        {/* ADD A LOGO FOR THE PROJECT BELOW */}
+                        StockBot
+                        {/*  <i className='fab fa-typo3' /> */}
                     </Link>
                     <div className="menu-icon" onClick={handleClick}>
                         {/* to handle the icon that show if in mobile or desktop, we dot the following code */}

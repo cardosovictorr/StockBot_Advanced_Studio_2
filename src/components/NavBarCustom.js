@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/NavBarCustom.css';
 import { ButtonCustom } from './ButtonCustom.js'
@@ -20,6 +20,10 @@ function NavBarCustom() {
             setButton(true);
         }
     };
+
+    useEffect(() => {
+        showButton();
+    }, []);
 
     window.addEventListener('risize', showButton);
 
@@ -46,7 +50,7 @@ function NavBarCustom() {
                         </li>
                         <li>
                             <Link
-                                to='/aboutUs'
+                                to='/about-us'
                                 className='nav-links'
                                 onClick={closeMobileMenu}
                             >
@@ -64,7 +68,7 @@ function NavBarCustom() {
                         </li>
                         <li>
                             <Link
-                                to='/'
+                                to='/sign-up'
                                 className='nav-links-mobile'
                                 onClick={closeMobileMenu}
                             >

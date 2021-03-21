@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import '../App.css';
 import { Link } from 'react-router-dom';
 import '../styles/NavBarCustom.css';
 import { ButtonCustom } from './ButtonCustom.js'
+import logo from '../images/LogoTransparent.png';
 
 //import 'bootstrap/dist/css/bootstrap.min.css'
 //import { Button, Navbar, Nav, NavDropdown, Form, FormControl } from 'react-bootstrap'
@@ -33,7 +35,8 @@ function NavBarCustom() {
                 <div className="navbar-container">
                     <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
                         {/* ADD A LOGO FOR THE PROJECT BELOW */}
-                        StockBot
+                        <img alt="logo" className="logo" src={logo} />
+                        <h2>StockBot</h2>
                         {/*  <i className='fab fa-typo3' /> */}
                     </Link>
                     <div className="menu-icon" onClick={handleClick}>
@@ -76,9 +79,11 @@ function NavBarCustom() {
                             >
                                 Sign Up
                             </Link>
+                            {button && <ButtonCustom buttonStyle='btn--outline'>SIGN UP</ButtonCustom>}
                         </li>
+                        
                     </ul>
-                    {button && <ButtonCustom buttonStyle='btn--outline'>SIGN UP</ButtonCustom>}
+                    
                 </div>
             </nav>
         </>
